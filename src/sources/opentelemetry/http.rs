@@ -208,6 +208,9 @@ fn decode_trace_body(
         )
     })?;
 
+    warn!(message = "CECP OTEL messages.", %request);
+    
+
     let events: Vec<Event> = request
         .resource_spans
         .into_iter()
